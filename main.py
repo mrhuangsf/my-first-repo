@@ -1,6 +1,12 @@
+import sys
+from datetime import datetime
+
+
 def greet(name):
     return f"Hello, {name}! Welcome to GitHub."
 
 
 if __name__ == "__main__":
-    print(greet("World"))
+    name = sys.argv[1] if len(sys.argv) > 1 else "World"
+    print(greet(name))
+    print(f"Today is {datetime.now():%Y-%m-%d}.")
